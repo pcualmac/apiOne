@@ -18,9 +18,6 @@ yarn-error.log
 /.idea
 /.vscode
 ./composer.lock
-./public/.htaccess
-./public/favicon.ico
-./public/index.php
-./public/robots.txt
-./storage/
+public/
+storage/
 ./vite.config.js
