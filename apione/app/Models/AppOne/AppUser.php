@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\AppOne;
 
 use App\Models\Role;
 use App\Models\Permission;
@@ -11,7 +11,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class User extends Authenticatable implements ShouldQueue , JWTSubject
+class AppUser extends Authenticatable implements ShouldQueue , JWTSubject
 {
     use HasFactory, Notifiable;
 
@@ -82,8 +82,8 @@ class User extends Authenticatable implements ShouldQueue , JWTSubject
      */
     public function getJWTCustomClaims()
     {
-       $result = $this->roles()->get();
+        $result = $this->roles()->get();
+        $result['email'] = $this->email;
         return $result->toArray();
-        return [];
     }
 }
