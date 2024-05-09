@@ -17,3 +17,10 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+composer.lock
+public/.htaccess
+public/favicon.ico
+public/index.php
+public/robots.txt
+storage/
+vite.config.js
