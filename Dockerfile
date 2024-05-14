@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache modules required for Laravel.
 RUN a2enmod rewrite
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 
 # Set the Apache document root
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public

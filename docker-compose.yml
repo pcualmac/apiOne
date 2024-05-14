@@ -17,10 +17,10 @@ services:
       - MYSQL_USER=apione
       - MYSQL_PASSWORD=apione
     volumes:
-      - ./database:/var/lib/mysql
+      - research-data-apione:/var/lib/mysql
     networks:
-      - db-networks
       - laravel-apione
+      - db-networks
 
   apione:
     build:
@@ -30,6 +30,8 @@ services:
       - ${PROJECTDIR}/apiOne/apione:/var/www/html
       - ${PROJECTDIR}/apiOne/apache-config.conf:/etc/apache2/sites-available/000-default.conf
       - ${PROJECTDIR}/apiOne/ports.conf:/etc/apache2/ports.conf
+      - ${PROJECTDIR}/apiOne/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+
     ports:
       - "8080:82"
     environment:
