@@ -34,7 +34,7 @@ class AppOneAuthUser extends Controller
         $customClaims = [];
         $credentials = $request->only('email', 'password');
         // Specify the guard
-        $guard = Auth::guard('appOne'); 
+        $guard = Auth::guard('api'); 
         // dd($this->secretKey);
         // Set the custom secret key for the guard
         config(['jwt.secret' => $this->secretKey]);
@@ -66,7 +66,7 @@ class AppOneAuthUser extends Controller
         $user->save();
 
         // Specify the guard
-        $guard = Auth::guard('appOne'); // Assuming you are using 'api' guard
+        $guard = Auth::guard('api'); // Assuming you are using 'api' guard
 
         // Set the custom secret key for the guard
         config(['jwt.secret' => $this->secretKey]);
@@ -87,7 +87,7 @@ class AppOneAuthUser extends Controller
         }
 
         // Specify the guard
-        $guard = Auth::guard('appOne'); // Assuming you are using 'api' guard
+        $guard = Auth::guard('api'); // Assuming you are using 'api' guard
 
         // Set the custom secret key for the guard
         config(['jwt.secret' => $this->secretKey]);

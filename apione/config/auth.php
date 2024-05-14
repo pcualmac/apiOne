@@ -42,15 +42,11 @@ return [
         ],
         'api' => [
             'driver' => 'jwt',
-            'provider' => 'users',
+            'provider' => 'api',
         ],
         'admin' => [
             'driver' => 'jwt',
             'provider' => 'admins',
-        ],
-        'appOne' => [
-            'driver' => 'jwt',
-            'provider' => 'appOne',
         ]
     ],
 
@@ -76,11 +72,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
-        'appOne' => [
+        'api' => [
             'driver' => 'eloquent',
             'model' => App\Models\AppOne\AppUser::class,
             'secret' => env('JWT_SECRET_APP1'),
